@@ -7,5 +7,6 @@ export default {
   hintLetters: '',
   to: null,
   hints: 3,
-  wrongAnswers: 0
+  wrongAnswers: 0,
+  activePage: 'StartMenu'
 }

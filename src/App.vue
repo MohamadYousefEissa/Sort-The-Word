@@ -1,30 +1,42 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <TheHeader :title="'Sort The Word'" />
-        <QuizView />
-        <VInput :label="'Enter The Word Here Please'" />
-        <div class="d-flex flex-column flex-sm-row gap-2 pb-2">
-          <VButton @click-event="submit" :label="'Submit'" />
-          <VButton @click-event="nextWord" :label="'Skip'" />
-        </div>
-      </div>
-    </div>
-  </div>
+  <transition name="start" mode="out-in">
+    <Component
+      :is="$store.getters.activePage"
+      :startTitle="'Sort The Word Game'"
+      :headerTitle="'Sort The Word'"
+      :inputPlaceHolder="'Enter The Word Here Please'"
+      :submitBtn="'Submit'"
+      :skipBtn="'Skip'"
+    />
+  </transition>
 </template>
 
 <script>
-import TheHeader from './components/TheHeader.vue'
-import QuizView from './components/QuizView.vue'
-import VInput from './components/UI/VInput.vue'
-import VButton from './components/UI/VButton.vue'
-
-import { mapActions } from 'vuex'
+import GameView from './components/GameView.vue'
+import StartMenu from './components/StartMenu.vue'
 export default {
-  components: { TheHeader, QuizView, VInput, VButton },
-  methods: {
-    ...mapActions(['nextWord', 'submit'])
-  }
+  components: { GameView, StartMenu }
 }
 </script>
+
+<style scoped>
+.start-leave-to {
+  opacity: 0;
+  transform: translateY(3rem);
+}
+.start-enter-from {
+  opacity: 0;
+  transform: translateY(-3rem);
+}
+.start-enter-active,
+.start-leave-active {
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+.start-enter-to,
+.start-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>

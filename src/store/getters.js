@@ -1,4 +1,7 @@
 export default {
+  activePage(state) {
+    return state.activePage
+  },
   words(state) {
     return state.words
   },

@@ -14,7 +14,7 @@ export default {
 
 <style scoped>
 div {
-  margin-top: -3rem;
+  margin-top: -2.5rem;
 }
 .right {
   color: var(--hint-right-clr);

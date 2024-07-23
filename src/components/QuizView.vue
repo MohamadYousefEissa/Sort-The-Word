@@ -1,7 +1,7 @@
 <template>
   <div class="my-5 py-3 d-flex flex-column align-items-center">
     <VAlert :content="alertContent" :mode="show" :show="show" />
-    <div class="d-flex flex-wrap justify-content-center gap-2 gap-md-3 mt-2">
+    <div class="d-flex flex-wrap justify-content-center gap-2 gap-md-3 mt-3">
       <div class="letter" v-for="(letter, i) in wordAfterShuffle" :key="letter + i">
         {{ letter }}
       </div>

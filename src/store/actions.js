@@ -1,4 +1,7 @@
 export default {
+  startGame(contex) {
+    contex.state.activePage = 'GameView'
+  },
   randomWord(contex) {
     const random = Math.floor(Math.random() * contex.state.words.length)
     contex.state.randomWord = contex.state.words[random]
@@ -32,10 +35,7 @@ export default {
     const input = document.querySelector('input')
     if (input.value.length === 0) {
       contex.commit('show', 'empty')
-      contex.state.to = setTimeout(() => {
-        if (contex.state.hintLetters) contex.commit('show', 'hint')
-        else contex.commit('show', null)
-      }, 2000)
+      contex.dispatch('timeOut', { delay: 2000 })
     } else if (input.value.toLowerCase() === contex.state.randomWord) {
       contex.dispatch('nextWord')
       contex.commit('show', 'right')
@@ -55,12 +55,11 @@ export default {
           contex.state.wrongAnswers = 0
           lamp.classList.add('shake')
           contex.commit('show', 'hintReminder')
+          contex.dispatch('timeOut', { delay: 3000 })
+          return
         }
       }
-      contex.state.to = setTimeout(() => {
-        if (contex.state.hintLetters) contex.commit('show', 'hint')
-        else contex.commit('show', null)
-      }, 2000)
+      contex.dispatch('timeOut', { delay: 2000 })
     }
   },
   hint(contex) {
@@ -73,11 +72,14 @@ export default {
       return
     } else {
       contex.commit('show', 'noHints')
-      contex.state.to = setTimeout(() => {
-        if (contex.state.hintLetters) contex.commit('show', 'hint')
-        else contex.commit('show', null)
-      }, 2000)
+      contex.dispatch('timeOut', { delay: 2000 })
     }
+  },
+  timeOut(contex, payload) {
+    contex.state.to = setTimeout(() => {
+      if (contex.state.hintLetters) contex.commit('show', 'hint')
+      else contex.commit('show', null)
+    }, payload.delay)
   },
   gameOver() {
     alert('Game Over')

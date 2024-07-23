@@ -1,12 +1,12 @@
 <template>
-  <div class="row py-2 text-nowrap">
+  <div class="row text-nowrap">
     <div class="col">
       <div class="d-flex flex-column flex-md-row column-gap-4">
         <div>Score : {{ score }}</div>
         <div>Hints : {{ hints }}</div>
       </div>
     </div>
-    <div class="col text-center">{{ title }}</div>
+    <div class="col">{{ title }}</div>
     <div class="col text-end">
       <button @click="$store.dispatch('hint')" title="Hint">
         <v-lamb v-if="hints > 0"></v-lamb>
