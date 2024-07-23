@@ -28,35 +28,3 @@ export default {
   }
 }
 </script>
-
-<style>
-* {
-  color: white;
-}
-body {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-  background: rgb(40, 40, 40);
-  overflow-y: hidden;
-  font-family: 'Open Sans', sans-serif;
-}
-.container {
-  background: rgb(24, 24, 24);
-  border-radius: 6px;
-  width: 800px;
-}
-@media screen and (max-width: 810px) {
-  .container {
-    width: 90vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  body {
-    display: flex;
-    place-content: center;
-    place-items: start;
-    margin-top: 3rem;
-  }
-}
-</style>

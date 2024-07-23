@@ -17,30 +17,34 @@ div {
   margin-top: -3rem;
 }
 .right {
-  color: green;
+  color: var(--hint-right-clr);
 }
 .wrong,
 .empty,
 .noHints {
-  color: red;
+  color: var(--hint-wrong-clr);
 }
 .hint {
-  color: rgb(88, 88, 241);
+  color: var(--hint-letters-clr);
 }
 .hintReminder {
-  color: gold;
+  color: var(--hint-reminder-clr);
 }
 
 .alert-enter-from,
 .alert-leave-to {
   opacity: 0;
+  transform: translateY(-1rem);
 }
 .alert-enter-active,
 .alert-leave-active {
-  transition: opacity 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
 }
 .alert-enter-to,
 .alert-leave-from {
   opacity: 1;
+  transform: translateY(0);
 }
 </style>

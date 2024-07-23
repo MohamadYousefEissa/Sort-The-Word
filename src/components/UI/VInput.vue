@@ -36,23 +36,22 @@ export default {
 
 <style scoped>
 input {
-  background: transparent;
-  border: 1px solid gray;
+  outline: 0;
   border-radius: 5px;
   width: 100%;
-  outline: 0;
   padding: 0.4rem 0.5rem;
-  position: relative;
+  background: transparent;
+  border: 1px solid var(--sec-clr);
 }
 label {
   position: absolute;
   top: 7px;
   left: 5px;
   pointer-events: none;
-  background: rgb(24, 24, 24);
-  color: rgb(180, 180, 180);
   padding: 0 0.5rem;
   transition: all 0.3s;
+  background: var(--box-bg);
+  color: var(--sec-clr);
 }
 input:focus ~ label,
 input:valid ~ label {

@@ -19,5 +19,21 @@ export default {
   },
   hints(state) {
     return state.hints
+  },
+  alertContent(state) {
+    switch (state.show) {
+      case 'right':
+        return 'Right Answer'
+      case 'wrong':
+        return 'Wrong Answer Try Again'
+      case 'hint':
+        return `Hint : The Word Starts With <span class="fw-bold">${state.hintLetters.toUpperCase()}</span>`
+      case 'noHints':
+        return 'No Enough Hints'
+      case 'hintReminder':
+        return `Remember You Can Use Hints You Have ${state.hints} Remain`
+      default:
+        return 'Please Enter At Least 1 Charachter'
+    }
   }
 }

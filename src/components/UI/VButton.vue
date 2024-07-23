@@ -12,16 +12,15 @@ export default {
 <style scoped>
 button {
   width: 100%;
-  background: rgb(56, 56, 56);
+  background: var(--sec-bg);
   border: 0;
   outline: 0;
   border-radius: 5px;
   padding: 0.5rem 0;
   transition: all 0.2s;
+  color: var(--color);
 }
-button:hover {
-  background: rgb(62, 62, 62);
-}
+
 button:active {
   transform: scale(0.95);
 }

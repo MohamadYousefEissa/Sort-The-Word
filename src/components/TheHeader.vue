@@ -19,16 +19,12 @@
 <script>
 import VLamb from './icons/VLamb.vue'
 import VLambOff from './icons/VLambOff.vue'
+import { mapGetters } from 'vuex'
 export default {
   props: ['title'],
   components: { VLamb, VLambOff },
   computed: {
-    score() {
-      return this.$store.getters.score
-    },
-    hints() {
-      return this.$store.getters.hints
-    }
+    ...mapGetters(['score', 'hints'])
   }
 }
 </script>

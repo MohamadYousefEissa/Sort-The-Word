@@ -15,17 +15,7 @@ import { mapGetters } from 'vuex'
 export default {
   components: { VAlert },
   computed: {
-    ...mapGetters(['wordAfterShuffle', 'show', 'hintLetters', 'hints']),
-    alertContent() {
-      if (this.show === 'right') return 'Right Answer'
-      else if (this.show === 'wrong') return 'Wrong Answer Try Again'
-      else if (this.show === 'hint')
-        return `Hint : The Word Starts With <span class="fw-bold">${this.hintLetters.toUpperCase()}</span>`
-      else if (this.show === 'noHints') return 'No Enough Hints'
-      else if (this.show === 'hintReminder')
-        return `Remember You Can Use Hints You Have ${this.hints} Remain`
-      else return 'Please Enter At Least 1 Charachter'
-    }
+    ...mapGetters(['wordAfterShuffle', 'show', 'alertContent'])
   },
   mounted() {
     this.$store.dispatch('randomWord')
@@ -35,7 +25,6 @@ export default {
 
 <style scoped>
 .letter {
-  background: rgb(70, 70, 70);
   border-radius: 6px;
   width: 50px;
   height: 50px;
@@ -43,11 +32,12 @@ export default {
   place-items: center;
   font-weight: bold;
   font-size: 20px;
+  background: var(--sec-bg);
 }
 @media screen and (max-width: 480px) {
   .letter {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
   }
 }
 </style>
