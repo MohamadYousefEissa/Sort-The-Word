@@ -3,7 +3,9 @@
     <div class="box" v-if="$store.getters.gameOver">
       <v-box class="pt-3">
         <h1>Game Over</h1>
-        <h6>Your Earn : {{ score }}</h6>
+        <p>
+          Your Earn : <span class="fw-bold">{{ score }} Points</span>
+        </p>
         <v-button @click-event="reload">Retry</v-button>
       </v-box>
       <div class="dark-layer"></div>
@@ -29,7 +31,7 @@ export default {
 <style scoped>
 h1 {
   color: var(--main-clr);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .box {
   position: absolute;
@@ -43,6 +45,7 @@ h1 {
 .container {
   position: absolute;
   z-index: 2;
+  margin-top: 1rem;
 }
 .dark-layer {
   position: absolute;

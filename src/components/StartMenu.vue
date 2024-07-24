@@ -1,16 +1,19 @@
 <template>
   <v-box>
-    <h1>{{ startTitle }}</h1>
-    <h6>By Mohamad Yousef Eissa ❤️</h6>
-    <ol class="text-start">
-      Tips:
-      <li>You have 3 hints</li>
-      <li>You can skip the word</li>
-      <li>Every correct answer you get a hint</li>
-      <li>The hint appear the first letters of word</li>
-      <li>Click the lamp in top-right corner to show the hint</li>
-      <li>Enjoy</li>
-    </ol>
+    <h1 class="mt-1">{{ startTitle }}</h1>
+    <p>By Mohamad Yousef Eissa ❤️</p>
+    <div class="text-start mt-5">
+      <p class="mb-2">Tips:</p>
+      <ul>
+        <li>You have 3 hints</li>
+        <li>You can skip the word</li>
+        <li>Every correct answer you get a hint</li>
+        <li>The game end when the words end</li>
+        <li>The hint appear the first letters of word</li>
+        <li>Click the lamp in top-right corner to show the hint</li>
+        <li>Enjoy</li>
+      </ul>
+    </div>
     <v-button @click-event="$store.dispatch('startGame')">Play</v-button>
   </v-box>
 </template>
@@ -25,12 +28,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.container {
-  font-family: monospace;
-}
-h6 {
-  margin: 1rem 0 3rem 0;
-}
-</style>

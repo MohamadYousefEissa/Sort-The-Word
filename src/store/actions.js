@@ -90,6 +90,9 @@ export default {
   },
   gameOver(contex) {
     clearTimeout(contex.state.to)
-    contex.state.gameOver = true
+
+    setTimeout(() => {
+      contex.state.gameOver = true
+    }, 500)
   }
 }
