@@ -11,7 +11,7 @@
       <li>Click the lamp in top-right corner to show the hint</li>
       <li>Enjoy</li>
     </ol>
-    <VButton @click-event="$store.dispatch('startGame')" :label="'Play'" />
+    <v-button @click-event="$store.dispatch('startGame')">Play</v-button>
   </v-box>
 </template>
 

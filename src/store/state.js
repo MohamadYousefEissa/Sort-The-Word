@@ -8,5 +8,6 @@ export default {
   to: null,
   hints: 3,
   wrongAnswers: 0,
-  activePage: 'StartMenu'
+  activePage: 'StartMenu',
+  gameOver: false
 }

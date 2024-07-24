@@ -24,11 +24,11 @@ export default {
     const input = document.querySelector('input')
     input.value = ''
     contex.state.hintLetters = ''
-    contex.commit('show', null)
     const preWord = contex.state.randomWord
     contex.state.words.splice(contex.state.words.indexOf(preWord), 1)
     if (contex.state.words.length > 0) contex.dispatch('randomWord')
     else contex.dispatch('gameOver')
+    contex.commit('show', null)
   },
   submit(contex) {
     clearTimeout(contex.state.to)
@@ -37,30 +37,37 @@ export default {
       contex.commit('show', 'empty')
       contex.dispatch('timeOut', { delay: 2000 })
     } else if (input.value.toLowerCase() === contex.state.randomWord) {
-      contex.dispatch('nextWord')
-      contex.commit('show', 'right')
-      contex.state.score++
-      contex.state.hints++
+      contex.dispatch('correctAnswer')
+    } else {
+      contex.dispatch('wrongAnswer')
+    }
+  },
+  correctAnswer(contex) {
+    contex.state.score++
+    contex.state.hints++
+    contex.dispatch('nextWord')
+    contex.commit('show', 'right')
+    if (contex.state.words.length > 0)
       contex.state.to = setTimeout(() => {
         contex.commit('show', null)
       }, 2000)
-    } else {
-      contex.commit('show', 'wrong')
-      const lamp = document.querySelector('.bi-lightbulb-fill')
-      if (lamp) {
-        if (contex.state.wrongAnswers < 2) {
-          contex.state.wrongAnswers++
-          lamp.classList.remove('shake')
-        } else {
-          contex.state.wrongAnswers = 0
-          lamp.classList.add('shake')
-          contex.commit('show', 'hintReminder')
-          contex.dispatch('timeOut', { delay: 3000 })
-          return
-        }
+  },
+  wrongAnswer(contex) {
+    contex.commit('show', 'wrong')
+    const lamp = document.querySelector('.bi-lightbulb-fill')
+    if (lamp) {
+      if (contex.state.wrongAnswers < 2) {
+        contex.state.wrongAnswers++
+        lamp.classList.remove('shake')
+      } else {
+        contex.state.wrongAnswers = 0
+        lamp.classList.add('shake')
+        contex.commit('show', 'hintReminder')
+        contex.dispatch('timeOut', { delay: 3000 })
+        return
       }
-      contex.dispatch('timeOut', { delay: 2000 })
     }
+    contex.dispatch('timeOut', { delay: 2000 })
   },
   hint(contex) {
     clearTimeout(contex.state.to)
@@ -81,8 +88,8 @@ export default {
       else contex.commit('show', null)
     }, payload.delay)
   },
-  gameOver() {
-    alert('Game Over')
-    window.location.reload()
+  gameOver(contex) {
+    clearTimeout(contex.state.to)
+    contex.state.gameOver = true
   }
 }

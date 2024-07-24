@@ -23,6 +23,9 @@ export default {
   hints(state) {
     return state.hints
   },
+  gameOver(state) {
+    return state.gameOver
+  },
   alertContent(state) {
     switch (state.show) {
       case 'right':

@@ -1,10 +1,9 @@
 <template>
-  <button @click="$emit('click-event')">{{ label }}</button>
+  <button @click="$emit('click-event')"><slot></slot></button>
 </template>
 
 <script>
 export default {
-  props: ['label'],
   emits: ['click-event']
 }
 </script>
