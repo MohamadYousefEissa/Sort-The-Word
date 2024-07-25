@@ -20,11 +20,11 @@
 <script>
 import GameView from './components/GameView.vue'
 import StartMenu from './components/StartMenu.vue'
-import ThemeButton from './components/UI/ThemeButton.vue'
+import ThemeButton from './components/icons/ThemeButton.vue'
 
 export default {
   components: { GameView, StartMenu, ThemeButton },
-  mounted() {
+  created() {
     this.$store.dispatch('getTheme')
     document.body.classList.add(this.$store.getters.theme)
   }

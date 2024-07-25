@@ -20,9 +20,13 @@ export default {
     changeTheme() {
       const theme = document.body.className
       document.body.className = theme === 'dark' ? 'light' : 'dark'
-
       this.$store.dispatch('changeTheme')
     }
+  },
+  mounted() {
+    const input = document.querySelector('input')
+    const theme = document.body.className
+    input.checked = theme === 'dark' ? false : true
   }
 }
 </script>
