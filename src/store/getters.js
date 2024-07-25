@@ -26,6 +26,9 @@ export default {
   gameOver(state) {
     return state.gameOver
   },
+  theme(state) {
+    return state.theme
+  },
   alertContent(state) {
     switch (state.show) {
       case 'right':

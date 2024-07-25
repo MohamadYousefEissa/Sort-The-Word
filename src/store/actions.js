@@ -90,9 +90,17 @@ export default {
   },
   gameOver(contex) {
     clearTimeout(contex.state.to)
-
     setTimeout(() => {
       contex.state.gameOver = true
     }, 500)
+  },
+  changeTheme(contex) {
+    const theme = contex.state.theme
+    contex.state.theme = theme === 'dark' ? 'light' : 'dark'
+    localStorage.setItem('theme', contex.state.theme)
+  },
+  getTheme(contex) {
+    const theme = localStorage.getItem('theme') || 'dark'
+    contex.state.theme = theme
   }
 }

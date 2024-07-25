@@ -10,6 +10,7 @@
     />
   </transition>
   <teleport to="body">
+    <ThemeButton />
     <p>
       Powered by Mohamad Yousef Eissa &copy; {{ new Date().getFullYear() }} | All rights reserved
     </p>
@@ -19,8 +20,14 @@
 <script>
 import GameView from './components/GameView.vue'
 import StartMenu from './components/StartMenu.vue'
+import ThemeButton from './components/UI/ThemeButton.vue'
+
 export default {
-  components: { GameView, StartMenu }
+  components: { GameView, StartMenu, ThemeButton },
+  mounted() {
+    this.$store.dispatch('getTheme')
+    document.body.classList.add(this.$store.getters.theme)
+  }
 }
 </script>
 

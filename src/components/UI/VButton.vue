@@ -17,7 +17,7 @@ button {
   padding: 0.5rem 0;
   transition: all 0.2s;
   background: var(--sec-bg);
-  color: var(--color);
+  color: var(--el-clr);
 }
 
 button:active {

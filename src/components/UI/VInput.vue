@@ -40,8 +40,9 @@ input {
   border-radius: 5px;
   width: 100%;
   padding: 0.4rem 0.5rem;
-  background: transparent;
+  background-color: transparent;
   border: 1px solid var(--sec-clr);
+  color: var(--main-clr);
 }
 label {
   position: absolute;
@@ -49,8 +50,10 @@ label {
   left: 5px;
   pointer-events: none;
   padding: 0 0.5rem;
-  transition: all 0.3s;
-  background: var(--box-bg);
+  transition:
+    all 0.3s,
+    background-color 0s;
+  background-color: var(--box-bg);
   color: var(--sec-clr);
 }
 input:focus ~ label,

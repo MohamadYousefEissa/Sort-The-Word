@@ -1,5 +1,5 @@
 export default {
-  words: ['door', 'window', 'game', 'cake', 'monster', 'mother', 'palestine'],
+  words: ['door', 'pizza', 'game', 'cake', 'sun', 'hair', 'palestine'],
   randomWord: null,
   wordAfterShuffle: null,
   show: null,
@@ -9,5 +9,6 @@ export default {
   hints: 3,
   wrongAnswers: 0,
   activePage: 'StartMenu',
-  gameOver: false
+  gameOver: false,
+  theme: 'dark'
 }

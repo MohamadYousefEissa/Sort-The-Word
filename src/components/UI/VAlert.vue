@@ -1,7 +1,7 @@
 <template>
   <transition name="alert">
     <div v-if="show" class="position-absolute w-75 text-center">
-      <span :class="mode" v-html="content"></span>
+      <p :class="mode" v-html="content"></p>
     </div>
   </transition>
 </template>

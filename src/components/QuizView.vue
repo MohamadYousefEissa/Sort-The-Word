@@ -36,6 +36,7 @@ export default {
   place-items: center;
   font-weight: bold;
   font-size: 20px;
+  color: var(--el-clr);
   background: var(--sec-bg);
 }
 @media screen and (max-width: 480px) {

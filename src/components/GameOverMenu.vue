@@ -38,6 +38,7 @@ h1 {
   text-align: center;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,6 +52,7 @@ h1 {
   position: absolute;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }

@@ -4,8 +4,8 @@
   --box-bg: rgb(24, 24, 24);
 
   --main-clr: #fff;
+  --el-clr: #fff;
   --sec-clr: rgb(180, 180, 180);
-
   --hint-wrong-clr: red;
   --hint-right-clr: green;
   --hint-letters-clr: rgb(88, 88, 240);
@@ -17,18 +17,31 @@
   src: url('./fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
   font-display: swap;
 }
-
-* {
+.hint span {
   color: var(--main-clr);
 }
 body {
   display: grid;
   place-items: center;
   height: 100vh;
-  background: var(--main-bg);
+  height: 100dvh;
+  background-color: var(--main-bg);
+  color: var(--main-clr);
   font-family: 'Montserrat';
+  transition: background-color 0.3s;
 }
+body.light {
+  --main-bg: #fff;
+  --sec-bg: teal;
+  --box-bg: #fff;
 
+  --main-clr: black;
+  --sec-clr: black;
+  text-shadow: 0 0 1px black;
+}
+body.light .container {
+  box-shadow: 0 0 20px gray;
+}
 .container {
   background: var(--box-bg);
   border-radius: 6px;
