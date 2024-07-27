@@ -25,7 +25,6 @@ export default {
   components: { GameView, StartMenu, ThemeButton, CopyRight },
   created() {
     this.$store.dispatch('getTheme')
-    document.body.classList.add(this.$store.getters.theme)
   }
 }
 </script>

@@ -95,12 +95,15 @@ export default {
     }, 500)
   },
   changeTheme(contex) {
-    const theme = contex.state.theme
-    contex.state.theme = theme === 'dark' ? 'light' : 'dark'
+    const html = document.querySelector('html')
+    contex.state.theme = contex.state.theme === 'dark' ? 'light' : 'dark'
+    html.setAttribute('data-theme', contex.state.theme)
     localStorage.setItem('theme', contex.state.theme)
   },
   getTheme(contex) {
-    const theme = localStorage.getItem('theme') || 'dark'
+    const html = document.querySelector('html')
+    const theme = localStorage.getItem('theme') || contex.getters.preferdTheme
     contex.state.theme = theme
+    html.setAttribute('data-theme', theme)
   }
 }

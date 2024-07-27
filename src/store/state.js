@@ -10,5 +10,5 @@ export default {
   wrongAnswers: 0,
   activePage: 'StartMenu',
   gameOver: false,
-  theme: 'dark'
+  theme: null
 }

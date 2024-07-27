@@ -29,6 +29,10 @@ export default {
   theme(state) {
     return state.theme
   },
+  preferdTheme() {
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+    return prefersDarkScheme ? 'dark' : 'light'
+  },
   alertContent(state) {
     switch (state.show) {
       case 'right':

@@ -30,7 +30,7 @@ body {
   font-family: 'Montserrat';
   transition: background-color 0.3s;
 }
-body.light {
+html[data-theme='light'] {
   --main-bg: #fff;
   --sec-bg: teal;
   --box-bg: #fff;
@@ -39,9 +39,10 @@ body.light {
   --sec-clr: black;
   text-shadow: 0 0 1px black;
 }
-body.light .container {
+html[data-theme='light'] .container {
   box-shadow: 0 0 20px rgb(160, 160, 160);
 }
+
 .container {
   background: var(--box-bg);
   border-radius: 6px;

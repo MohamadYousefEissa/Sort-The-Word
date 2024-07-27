@@ -7,7 +7,7 @@
       id="theme-btn"
       aria-label="theme-btn"
       v-model="themeInput"
-      @change="changeTheme"
+      @change="this.$store.dispatch('changeTheme')"
     />
     <svg viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="moon">
       <path
@@ -29,15 +29,8 @@ export default {
       themeInput: null
     }
   },
-  methods: {
-    changeTheme() {
-      const theme = document.body.className
-      document.body.className = theme === 'dark' ? 'light' : 'dark'
-      this.$store.dispatch('changeTheme')
-    }
-  },
   mounted() {
-    const theme = document.body.className
+    const theme = this.$store.getters.theme
     this.themeInput = theme === 'dark' ? false : true
   }
 }
