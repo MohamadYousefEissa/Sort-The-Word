@@ -21,7 +21,7 @@ export default {
     contex.state.wordAfterShuffle = shuffledWord.toUpperCase()
   },
   nextWord(contex) {
-    const input = document.querySelector('input')
+    const input = document.querySelector('#word-input')
     input.value = ''
     contex.state.hintLetters = ''
     const preWord = contex.state.randomWord

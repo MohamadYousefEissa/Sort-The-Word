@@ -11,9 +11,7 @@
   </transition>
   <teleport to="body">
     <ThemeButton />
-    <p>
-      Powered by Mohamad Yousef Eissa &copy; {{ new Date().getFullYear() }} | All rights reserved
-    </p>
+    <CopyRight />
   </teleport>
 </template>
 
@@ -21,9 +19,10 @@
 import GameView from './components/GameView.vue'
 import StartMenu from './components/StartMenu.vue'
 import ThemeButton from './components/icons/ThemeButton.vue'
+import CopyRight from './components/CopyRight.vue'
 
 export default {
-  components: { GameView, StartMenu, ThemeButton },
+  components: { GameView, StartMenu, ThemeButton, CopyRight },
   created() {
     this.$store.dispatch('getTheme')
     document.body.classList.add(this.$store.getters.theme)

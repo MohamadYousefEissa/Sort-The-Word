@@ -6,7 +6,7 @@
       name="list"
       class="d-flex flex-wrap justify-content-center gap-2 gap-md-3 mt-3 list-unstyled"
     >
-      <li class="letter" v-for="(letter, i) in wordAfterShuffle" :key="letter + i">
+      <li class="letter" v-for="(letter, i) in wordAfterShuffle" :key="letter + i" translate="no">
         {{ letter }}
       </li>
     </transition-group>

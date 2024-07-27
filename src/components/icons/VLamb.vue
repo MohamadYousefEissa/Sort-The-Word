@@ -26,9 +26,11 @@ svg {
   }
   40% {
     transform: translateX(1px);
+    filter: drop-shadow(0 0 10px gold);
   }
   60% {
     transform: translateX(-1px);
+    filter: drop-shadow(0 0 10px gold);
   }
   80% {
     transform: translateX(1px);

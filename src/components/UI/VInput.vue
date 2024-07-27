@@ -7,10 +7,10 @@
         required
         spellcheck="false"
         autocomplete="off"
-        name="word"
-        id="word"
+        name="word-input"
+        id="word-input"
       />
-      <label for="word"> {{ label }}</label>
+      <label for="word-input"> {{ label }}</label>
     </div>
   </form>
 </template>
