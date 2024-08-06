@@ -1,7 +1,8 @@
 :root {
-  --main-bg: rgb(40, 40, 40);
+  --main-bg: rgb(30, 30, 30);
   --sec-bg: rgb(65, 65, 65);
   --box-bg: rgb(24, 24, 24);
+  --box-bg: #111;
 
   --main-clr: #fff;
   --el-clr: #fff;
@@ -31,16 +32,18 @@ body {
   transition: background-color 0.3s;
 }
 html[data-theme='light'] {
-  --main-bg: #fff;
+  --main-bg: whitesmoke;
+  --sec-bg: linear-gradient(45deg, #00f260, #0575e6);
   --sec-bg: teal;
   --box-bg: #fff;
 
   --main-clr: black;
   --sec-clr: black;
-  text-shadow: 0 0 1px black;
+  --hint-letters-clr: rgb(255, 0, 179);
+  --hint-reminder-clr: #0575e6;
 }
 html[data-theme='light'] .container {
-  box-shadow: 0 0 20px rgb(160, 160, 160);
+  box-shadow: 0 0 30px rgb(180, 180, 180);
 }
 
 .container {
