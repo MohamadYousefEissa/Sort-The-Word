@@ -1,9 +1,9 @@
 <template>
   <v-box>
-    <h1 class="mt-1">{{ startTitle }}</h1>
-    <p>By Mohamad Yousef Eissa ❤️</p>
+    <h1 class="mt-1" id="start-title" ref="startTitle">{{ startTitle }}</h1>
+    <p id="author">By Mohamad Yousef Eissa ❤️</p>
     <div class="text-start mt-5">
-      <p class="mb-2">Tips:</p>
+      <p class="mb-2" id="tips-label">Tips:</p>
       <ul>
         <li>You have 3 hints</li>
         <li>You can skip the word</li>
@@ -20,12 +20,58 @@
 </template>
 
 <script>
+import { gsap } from 'gsap'
+
 export default {
   props: {
     startTitle: {
       type: String,
       default: 'Sort The Word'
     }
+  },
+  mounted() {
+    //for text animation :
+    const textTL = gsap.timeline()
+    const startTitle = this.$refs.startTitle
+    const splitedText = startTitle.textContent.replace(/ /g, '').split('')
+    let text = ''
+    splitedText.forEach((item) => {
+      if (item < 'a') {
+        text += `&ThickSpace;<span>${item}</span>`
+      } else {
+        text += `<span>${item}</span>`
+      }
+    })
+    startTitle.innerHTML = text
+
+    textTL.from('#start-title span', {
+      opacity: 0,
+      delay: 0.2,
+      duration: 1,
+      y: -20,
+      stagger: 0.1,
+      ease: 'elastic.out(1,0.4)'
+    })
+    textTL.from('#author', {
+      opacity: 0
+    })
+    textTL.from('#tips-label', {
+      opacity: 0
+    })
+    textTL.from('li', {
+      x: -20,
+      opacity: 0,
+      stagger: 0.4
+    })
   }
 }
 </script>
+
+<style>
+#start-title span {
+  display: inline-block;
+}
+#start-title {
+  font-size: clamp(20px, 8vw, 40px);
+}
+</style>

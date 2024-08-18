@@ -7,6 +7,7 @@
       :inputPlaceHolder="'Enter The Word Here Please'"
       :submitBtn="'Submit'"
       :skipBtn="'Skip'"
+      v-if="isLoad"
     />
   </transition>
   <teleport to="body">
@@ -23,8 +24,16 @@ import CopyRight from './components/CopyRight.vue'
 
 export default {
   components: { GameView, StartMenu, ThemeButton, CopyRight },
+  data() {
+    return {
+      isLoad: false
+    }
+  },
   created() {
     this.$store.dispatch('getTheme')
+    window.addEventListener('load', () => {
+      this.isLoad = true
+    })
   }
 }
 </script>

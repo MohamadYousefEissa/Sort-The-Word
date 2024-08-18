@@ -2,7 +2,7 @@
   <transition name="layer">
     <div class="box" v-if="$store.getters.gameOver">
       <v-box class="pt-3">
-        <h1>Game Over</h1>
+        <h1>Well Played</h1>
         <p>
           Your Earn : <span class="fw-bold">{{ score }} Points</span>
         </p>

@@ -5,7 +5,7 @@
         <div>Score : {{ score }}</div>
         <div>Hints : {{ hints }}</div>
         <div class="mt-3 mt-md-0">
-          <button @click="$store.dispatch('resetSelected')" v-if="isUserSelected">
+          <button @click="$store.dispatch('resetSelected')" v-if="isUserSelected" id="reset-btn">
             <v-reset></v-reset>
           </button>
         </div>
@@ -13,7 +13,7 @@
     </div>
     <div class="col">{{ title }}</div>
     <div class="col text-end">
-      <button @click="$store.dispatch('hint')" title="Hint">
+      <button @click="$store.dispatch('hint')" title="Hint" id="lamb">
         <v-lamb v-if="isRemainHint"></v-lamb>
         <v-lamb-off v-else></v-lamb-off>
       </button>
@@ -43,9 +43,15 @@ button {
   background: none;
   outline: 0;
   border: 0;
+  padding: 0;
+}
+#reset-btn {
+  position: absolute;
+}
+#lamb {
   padding: 0 0 5px 5px;
 }
-button:active {
+#lamb:active {
   transform: scale(0.9);
 }
 </style>
