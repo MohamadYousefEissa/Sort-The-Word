@@ -11,9 +11,6 @@ export default {
   wordAfterShuffle(state) {
     return state.wordAfterShuffle
   },
-  show(state) {
-    return state.show
-  },
   score(state) {
     return state.score
   },
@@ -33,8 +30,8 @@ export default {
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches
     return prefersDarkScheme ? 'dark' : 'light'
   },
-  alertContent(state) {
-    switch (state.show) {
+  alertContent(state, getters) {
+    switch (getters.show) {
       case 'right':
         return 'Right Answer'
       case 'wrong':

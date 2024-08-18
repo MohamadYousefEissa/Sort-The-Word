@@ -1,14 +1,20 @@
 import { createStore } from 'vuex'
 
-import state from './state'
-import actions from './actions'
-import getters from './getters'
+import selectLettersModule from './selectLettersModule/index'
+import coreAppModule from './coreAppModule/index'
 const store = createStore({
+  modules: { selectLettersModule, coreAppModule },
   state() {
-    return state
+    return {
+      show: null
+    }
   },
-  actions,
-  getters,
+  getters: {
+    show(state) {
+      return state.show
+    }
+  },
+
   mutations: {
     show(state, val) {
       state.show = val

@@ -6,8 +6,15 @@
       name="list"
       class="d-flex flex-wrap justify-content-center gap-2 gap-md-3 mt-3 list-unstyled"
     >
-      <li class="letter" v-for="(letter, i) in wordAfterShuffle" :key="letter + i" translate="no">
+      <li
+        class="letter"
+        v-for="(letter, i) in wordAfterShuffle"
+        :key="letter + i"
+        translate="no"
+        @click="selectLetter(letter)"
+      >
         {{ letter }}
+        <span></span>
       </li>
     </transition-group>
   </div>
@@ -19,7 +26,12 @@ import { mapGetters } from 'vuex'
 export default {
   components: { VAlert },
   computed: {
-    ...mapGetters(['wordAfterShuffle', 'show', 'alertContent'])
+    ...mapGetters(['wordAfterShuffle', 'alertContent', 'show'])
+  },
+  methods: {
+    selectLetter(letter) {
+      this.$store.dispatch('selectLetter', { letter: letter, target: event.target })
+    }
   },
   mounted() {
     this.$store.dispatch('randomWord')
@@ -29,6 +41,7 @@ export default {
 
 <style scoped>
 .letter {
+  position: relative;
   border-radius: 6px;
   width: 50px;
   height: 50px;
@@ -37,12 +50,31 @@ export default {
   font-weight: bold;
   font-size: 20px;
   color: var(--el-clr);
-  background: var(--sec-bg);
+  background-color: var(--sec-bg);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.selected {
+  opacity: 0.5;
+}
+
+li span {
+  font-size: 12px;
+  position: absolute;
+  left: 5px;
+  bottom: 0;
 }
 @media screen and (max-width: 480px) {
   .letter {
     width: 40px;
     height: 40px;
+  }
+  li span {
+    font-size: 8px;
+    position: absolute;
+    left: 5px;
+    bottom: 0;
   }
 }
 .list-enter-from,

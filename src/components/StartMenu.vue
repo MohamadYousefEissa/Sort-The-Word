@@ -10,6 +10,7 @@
         <li>Every correct answer you get a hint</li>
         <li>The game end when the words end</li>
         <li>The hint appear the first letters of word</li>
+        <li>You can answer by clicking at the letters</li>
         <li>Click the lamp in top-right corner to show the hint</li>
         <li>Enjoy</li>
       </ul>

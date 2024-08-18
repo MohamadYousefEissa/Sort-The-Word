@@ -2,7 +2,6 @@ export default {
   words: ['door', 'pizza', 'game', 'cake', 'sun', 'hair', 'palestine'],
   randomWord: null,
   wordAfterShuffle: null,
-  show: null,
   score: 0,
   hintLetters: '',
   to: null,

@@ -30,13 +30,6 @@ export default {
 </script>
 
 <style scoped>
-p {
-  position: absolute;
-  text-align: center;
-  bottom: 0;
-  font-size: 13px;
-  margin-bottom: 10px;
-}
 .start-leave-to {
   opacity: 0;
   transform: translateY(3rem);
