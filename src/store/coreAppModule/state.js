@@ -1,5 +1,16 @@
 export default {
-  words: ['door', 'pizza', 'game', 'cake', 'sun', 'hair', 'palestine'],
+  words: [
+    'door',
+    'pizza',
+    'game',
+    'cake',
+    'sun',
+    'hair',
+    'palestine',
+    'purple',
+    'people',
+    'pencil'
+  ],
   randomWord: null,
   wordAfterShuffle: null,
   score: 0,
