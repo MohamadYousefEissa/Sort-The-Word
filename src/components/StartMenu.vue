@@ -1,6 +1,6 @@
 <template>
   <v-box>
-    <h1 class="mt-1" id="start-title" ref="startTitle">{{ startTitle }}</h1>
+    <h1 class="mt-1" id="start-title" ref="startTitle">Sort The Word Game</h1>
     <p id="author">By Mohamad Yousef Eissa ❤️</p>
     <div class="text-start mt-5">
       <p class="mb-2" id="tips-label">Tips:</p>
@@ -23,12 +23,6 @@
 import { gsap } from 'gsap'
 
 export default {
-  props: {
-    startTitle: {
-      type: String,
-      default: 'Sort The Word'
-    }
-  },
   mounted() {
     //for text animation :
     const textTL = gsap.timeline()
@@ -44,25 +38,26 @@ export default {
     })
     startTitle.innerHTML = text
 
-    textTL.from('#start-title span', {
-      opacity: 0,
-      delay: 0.2,
-      duration: 1,
-      y: -20,
-      stagger: 0.1,
-      ease: 'elastic.out(1,0.4)'
-    })
-    textTL.from('#author', {
-      opacity: 0
-    })
-    textTL.from('#tips-label', {
-      opacity: 0
-    })
-    textTL.from('li', {
-      x: -20,
-      opacity: 0,
-      stagger: 0.4
-    })
+    textTL
+      .from('#start-title span', {
+        opacity: 0,
+        delay: 0.2,
+        duration: 1,
+        y: -20,
+        stagger: 0.1,
+        ease: 'elastic.out(1,0.4)'
+      })
+      .from('#author', {
+        opacity: 0
+      })
+      .from('#tips-label', {
+        opacity: 0
+      })
+      .from('li', {
+        x: -20,
+        opacity: 0,
+        stagger: 0.4
+      })
   }
 }
 </script>
@@ -71,7 +66,14 @@ export default {
 #start-title span {
   display: inline-block;
 }
+</style>
+
+<style scoped>
 #start-title {
   font-size: clamp(20px, 8vw, 40px);
+}
+p,
+li {
+  font-size: clamp(14px, 2vw, 16px);
 }
 </style>

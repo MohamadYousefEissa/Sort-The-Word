@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <div class="col">{{ title }}</div>
+    <div class="col">Sort The Word</div>
     <div class="col text-end">
       <button @click="$store.dispatch('hint')" title="Hint" id="lamb">
         <v-lamb v-if="isRemainHint"></v-lamb>
@@ -27,7 +27,6 @@ import VLambOff from './icons/VLambOff.vue'
 import VReset from './icons/VReset.vue'
 import { mapGetters } from 'vuex'
 export default {
-  props: ['title'],
   components: { VLamb, VLambOff, VReset },
   computed: {
     ...mapGetters(['score', 'hints', 'isUserSelected']),

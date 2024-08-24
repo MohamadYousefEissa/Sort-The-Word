@@ -10,19 +10,13 @@
         name="word-input"
         id="word-input"
       />
-      <label for="word-input"> {{ label }}</label>
+      <label for="word-input">Enter The Word Here Please</label>
     </div>
   </form>
 </template>
 
 <script>
 export default {
-  props: {
-    label: {
-      type: String,
-      default: 'Enter The Word Here'
-    }
-  },
   methods: {
     submit() {
       this.$store.dispatch('submit')
@@ -60,5 +54,15 @@ input:focus ~ label,
 input:valid ~ label {
   top: -13px;
   left: 20px;
+}
+@media screen and (max-width: 320px) {
+  label {
+    font-size: 13px;
+    top: 9px;
+  }
+  input:focus ~ label,
+  input:valid ~ label {
+    top: -10px;
+  }
 }
 </style>

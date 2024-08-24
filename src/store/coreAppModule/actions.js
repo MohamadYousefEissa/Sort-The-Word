@@ -65,7 +65,7 @@ export default {
         context.state.wrongAnswers = 0
         lamp.classList.add('shake')
         context.commit('show', 'hintReminder')
-        context.dispatch('timeOut', { delay: 3000 })
+        context.dispatch('timeOut', { delay: 4000 })
         return
       }
     }

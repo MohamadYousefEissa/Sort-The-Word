@@ -1,14 +1,6 @@
 <template>
   <transition name="start" mode="out-in">
-    <Component
-      :is="$store.getters.activePage"
-      :startTitle="'Sort The Word Game'"
-      :headerTitle="'Sort The Word'"
-      :inputPlaceHolder="'Enter The Word Here Please'"
-      :submitBtn="'Submit'"
-      :skipBtn="'Skip'"
-      v-if="isLoad"
-    />
+    <Component :is="$store.getters.activePage" v-if="isLoad" />
   </transition>
   <teleport to="body">
     <ThemeButton />

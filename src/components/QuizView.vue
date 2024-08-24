@@ -53,6 +53,7 @@ export default {
   background-color: var(--sec-bg);
   cursor: pointer;
   transition: opacity 0.2s;
+  user-select: none;
 }
 
 .selected {
@@ -60,7 +61,7 @@ export default {
 }
 
 li span {
-  font-size: 12px;
+  font-size: 10px;
   position: absolute;
   left: 5px;
   bottom: 0;
@@ -71,7 +72,7 @@ li span {
     height: 40px;
   }
   li span {
-    font-size: 8px;
+    font-size: 9px;
     position: absolute;
     left: 5px;
     bottom: 0;
