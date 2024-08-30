@@ -11,7 +11,7 @@
         v-for="(letter, i) in wordAfterShuffle"
         :key="letter + i"
         translate="no"
-        @click="selectLetter(letter)"
+        @click="selectLetter($event, letter)"
       >
         {{ letter }}
         <span></span>
@@ -29,7 +29,7 @@ export default {
     ...mapGetters(['wordAfterShuffle', 'alertContent', 'show'])
   },
   methods: {
-    selectLetter(letter) {
+    selectLetter(event, letter) {
       this.$store.dispatch('selectLetter', { letter: letter, target: event.target })
     }
   },
