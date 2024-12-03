@@ -1,5 +1,5 @@
 <template>
-  <p>Powered by Mohamad Yousef Eissa &copy; {{ new Date().getFullYear() }} | All Rights Reserved</p>
+  <p>Powered by Mohamad Yousef Eissa &copy; 2024 | All Rights Reserved</p>
 </template>
 <style scoped>
 p {
